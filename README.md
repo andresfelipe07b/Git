@@ -82,3 +82,36 @@ git reset HEAD <archivo> # Quita el archivo del área de staging
 ---
 
 
+## 🔃 Git Flow (Flujo de trabajo avanzado)
+
+Git Flow es una estrategia de ramificación que ayuda a organizar el desarrollo de software. Para usarlo necesitas instalar la herramienta:
+
+```bash
+git flow init            # Inicializa Git Flow en tu repositorio
+```
+
+### Ramas principales:
+- `main`: Contiene el código en producción
+- `develop`: Contiene el código en desarrollo
+
+### Ramas de soporte:
+- `feature/*`: Para nuevas funcionalidades
+- `release/*`: Preparación para una nueva versión
+- `hotfix/*`: Correcciones rápidas en producción
+
+### Comandos útiles:
+
+```bash
+git flow feature start <nombre>     # Inicia una nueva feature
+git flow feature finish <nombre>    # Finaliza y fusiona la feature a develop
+
+git flow release start <versión>    # Inicia una nueva release
+git flow release finish <versión>   # Finaliza la release, fusiona a main y crea tag
+
+git flow hotfix start <nombre>      # Inicia un hotfix desde main
+git flow hotfix finish <nombre>     # Finaliza el hotfix, fusiona a main y develop
+```
+
+> 💡 Git Flow es ideal para equipos que liberan versiones con frecuencia y tienen entornos de desarrollo y producción separados.
+
+---
